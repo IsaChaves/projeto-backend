@@ -45,7 +45,7 @@ server.get(
         var accountHelpers = require('*/cartridge/scripts/account/accountHelpers');
         var reportingUrlsHelper = require('*/cartridge/scripts/reportingUrls');
         var reportingURLs;
-        
+
         // Get reporting event Account Open url
         if (req.querystring.registration && req.querystring.registration === 'submitted') {
             reportingURLs = reportingUrlsHelper.getAccountOpenReportingURLs(
@@ -54,6 +54,7 @@ server.get(
         }
 
         var accountModel = accountHelpers.getAccountModel(req);
+
         res.render('account/accountDashboard', {
             account: accountModel,
             accountlanding: true,
@@ -66,9 +67,8 @@ server.get(
             reportingURLs: reportingURLs,
             payment: accountModel.payment,
             viewSavedPaymentsUrl: URLUtils.url('PaymentInstruments-List').toString(),
-            addPaymentUrl: URLUtils.url('PaymentInstruments-AddPayment').toString()           
-        }       
-        );
+            addPaymentUrl: URLUtils.url('PaymentInstruments-AddPayment').toString()
+        });
         next();
     }
 );
@@ -160,7 +160,6 @@ server.post(
  * @param {querystringparameter} - rurl - redirect url. The value of this is a number. This number then gets mapped to an endpoint set up in oAuthRenentryRedirectEndpoints.js
  * @param {httpparameter} - dwfrm_profile_customer_firstname - Input field for the shoppers's first name
  * @param {httpparameter} - dwfrm_profile_customer_lastname - Input field for the shopper's last name
- * @param {httpparameter} - dwfrm_profile_customer_cpfisabela - Input field for the shoppers's cpf
  * @param {httpparameter} - dwfrm_profile_customer_phone - Input field for the shopper's phone number
  * @param {httpparameter} - dwfrm_profile_customer_email - Input field for the shopper's email address
  * @param {httpparameter} - dwfrm_profile_customer_emailconfirm - Input field for the shopper's email address
@@ -223,6 +222,7 @@ server.post(
             emailConfirm: registrationForm.customer.emailconfirm.value,
             password: registrationForm.login.password.value,
             passwordConfirm: registrationForm.login.passwordconfirm.value,
+            gender:registrationForm.customer.gender.value,
             validForm: registrationForm.valid,
             form: registrationForm
         };
@@ -269,6 +269,7 @@ server.post(
                                 newCustomerProfile.custom.cpfisabela = registrationForm.cpfisabela;
                                 newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.email = registrationForm.email;
+                                newCustomerProfile.gender = registrationForm.gender;
                             }
                         });
                     } catch (e) {
@@ -354,9 +355,15 @@ server.get(
         profileForm.clear();
         profileForm.customer.firstname.value = accountModel.profile.firstName;
         profileForm.customer.lastname.value = accountModel.profile.lastName;
-        profileForm.customer.cpfisabela.value = accountModel.profile.cpfisabela;
         profileForm.customer.phone.value = accountModel.profile.phone;
         profileForm.customer.email.value = accountModel.profile.email;
+
+        var CustomerMgr = require ('dw/cutomer/CustomerMgr');
+        var profileCustom = CustomerMgr.getCustomerByLogin(profileForm.customer.email.value);
+        var profileCustom = profileCustom.getProfile();
+
+        profileForm.customer.genderCustom.value = profileCustom.custom.genderCustom;
+
         res.render('account/profile', {
             profileForm: profileForm,
             breadcrumbs: [
@@ -420,11 +427,11 @@ server.post(
         var result = {
             firstName: profileForm.customer.firstname.value,
             lastName: profileForm.customer.lastname.value,
-            cpfisabela: profileForm.customer.cpfisabela.value,
             phone: profileForm.customer.phone.value,
             email: profileForm.customer.email.value,
             confirmEmail: profileForm.customer.emailconfirm.value,
             password: profileForm.login.password.value,
+            genderCustom: profileForm.customer.genderCustom.value,
             profileForm: profileForm
         };
         if (profileForm.valid) {
@@ -466,6 +473,7 @@ server.post(
                         profile.setLastName(formInfo.lastName);
                         profile.setEmail(formInfo.email);
                         profile.setPhoneHome(formInfo.phone);
+                        profile.custom.genderCustom = formInfo.genderCustom;
                     });
 
                     // Send account edited email

@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-header clearfix">
         <h2 class="pull-left profile-header">${Resource.msg('label.profile','account',null)}</h2>
-         <isif condition="${!pdict.account.isExternallyAuthenticated}">
+        <isif condition="${!pdict.account.isExternallyAuthenticated}">
             <a href="${URLUtils.url('Account-EditProfile')}" class="pull-right" aria-label="${Resource.msg('label.profile.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a>
         </isif>
     </div>
@@ -16,7 +16,7 @@
         </dl>
         <dl>
             <dt>${Resource.msg('label.profile.cpfisabela','account',null)}</dt>
-            <dd>${{pdict.account.profile.cpfisabela}</dd>
+            <dd>${pdict.account.profile.cpfisabela}</dd>
         </dl>
         <dl>
             <dt>${Resource.msg('label.profile.email','account',null)}</dt>

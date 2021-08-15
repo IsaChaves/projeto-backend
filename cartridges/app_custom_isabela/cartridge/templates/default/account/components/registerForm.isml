@@ -38,8 +38,7 @@
     <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.cpfisabela.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-cpfisabela">
-        <isprint value="${pdict.profileForm.customer.cpfisabela.label}" encoding="htmlcontent" />
-            CPF
+            <isprint value="${pdict.profileForm.customer.cpfisabela.label}" encoding="htmlcontent" />
         </label>
         <input
             type="text"
@@ -47,11 +46,10 @@
             id="registration-form-cpfisabela"
             data-missing-error="${Resource.msg('error.message.required','forms',null)}"
             data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
-            aria-describedby="form-cpfisabela-error"
+            aria-describedby="form-fname-error"
             <isprint value=${pdict.profileForm.customer.cpfisabela.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-cpfisabela-error"></div>
     </div>
-
     <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-phone">

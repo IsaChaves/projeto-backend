@@ -18,7 +18,7 @@
 			missing-error="error.message.required"
 			range-error="error.message.50orless" 
 			type="string" />
-
+		
 		<field 
 			formid="cpfisabela" 
 			label="label.input.cpfisabela.profile" 
@@ -26,8 +26,7 @@
 			max-length="11"
 			missing-error="error.message.required" 
 			range-error="error.message.11orless" 
-			
-			type="string" />	
+			type="string" />
 
 		<field
 			formid="email" 
@@ -102,6 +101,7 @@
 			range-error="error.message.8_255characters"
 			value-error="error.message.currentpasswordnomatch"
 			type="string" />
+
 		
 		<include formid="newpasswords" name="newPasswords"/>
 	</group>
