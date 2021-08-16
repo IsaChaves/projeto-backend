@@ -217,6 +217,7 @@ server.post(
             firstName: registrationForm.customer.firstname.value,
             lastName: registrationForm.customer.lastname.value,
             cpfisabela: registrationForm.customer.cpfisabela.value,
+            birthday: registrationForm.customer.birthday,
             phone: registrationForm.customer.phone.value,
             email: registrationForm.customer.email.value,
             emailConfirm: registrationForm.customer.emailconfirm.value,
@@ -266,6 +267,7 @@ server.post(
 
                                 newCustomerProfile.firstName = registrationForm.firstName;
                                 newCustomerProfile.lastName = registrationForm.lastName;
+                                newCustomerProfile.birthday = registrationForm.birthday,
                                 newCustomerProfile.custom.cpfisabela = registrationForm.cpfisabela;
                                 newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.email = registrationForm.email;
