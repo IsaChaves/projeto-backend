@@ -217,13 +217,11 @@ server.post(
             firstName: registrationForm.customer.firstname.value,
             lastName: registrationForm.customer.lastname.value,
             cpfisabela: registrationForm.customer.cpfisabela.value,
-            birthday: registrationForm.customer.birthday,
             phone: registrationForm.customer.phone.value,
             email: registrationForm.customer.email.value,
             emailConfirm: registrationForm.customer.emailconfirm.value,
             password: registrationForm.login.password.value,
             passwordConfirm: registrationForm.login.passwordconfirm.value,
-            gender:registrationForm.customer.gender.value,
             validForm: registrationForm.valid,
             form: registrationForm
         };
@@ -267,11 +265,9 @@ server.post(
 
                                 newCustomerProfile.firstName = registrationForm.firstName;
                                 newCustomerProfile.lastName = registrationForm.lastName;
-                                newCustomerProfile.birthday = registrationForm.birthday,
                                 newCustomerProfile.custom.cpfisabela = registrationForm.cpfisabela;
                                 newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.email = registrationForm.email;
-                                newCustomerProfile.gender = registrationForm.gender;
                             }
                         });
                     } catch (e) {
@@ -364,7 +360,6 @@ server.get(
         var profileCustom = CustomerMgr.getCustomerByLogin(profileForm.customer.email.value);
         var profileCustom = profileCustom.getProfile();
 
-        profileForm.customer.genderCustom.value = profileCustom.custom.genderCustom;
 
         res.render('account/profile', {
             profileForm: profileForm,
@@ -433,7 +428,6 @@ server.post(
             email: profileForm.customer.email.value,
             confirmEmail: profileForm.customer.emailconfirm.value,
             password: profileForm.login.password.value,
-            genderCustom: profileForm.customer.genderCustom.value,
             profileForm: profileForm
         };
         if (profileForm.valid) {
@@ -475,7 +469,6 @@ server.post(
                         profile.setLastName(formInfo.lastName);
                         profile.setEmail(formInfo.email);
                         profile.setPhoneHome(formInfo.phone);
-                        profile.custom.genderCustom = formInfo.genderCustom;
                     });
 
                     // Send account edited email

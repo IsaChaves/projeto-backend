@@ -50,22 +50,6 @@
             <isprint value=${pdict.profileForm.customer.cpfisabela.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-cpfisabela-error"></div>
     </div>
-
-    <div class="form-group
-        <isif condition="${!!pdict.profileForm.customer.birthday.mandatory === true}">required</isif>">
-        <label class="form-control-label" for="registration-form-birthday">
-            <isprint value="${pdict.profileForm.customer.birthday.label}" encoding="htmlcontent" />
-        </label>
-        <input
-            type="date"
-            class="form-control"
-            id="registration-form-birthday"
-            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
-            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
-            aria-describedby="form-birthday-error"
-            <isprint value=${pdict.profileForm.customer.birthday.attributes} encoding="off" />>
-        <div class="invalid-feedback" id="form-birthday-error"></div>
-    </div>
     <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-phone">

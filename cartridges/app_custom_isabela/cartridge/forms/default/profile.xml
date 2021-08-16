@@ -28,15 +28,6 @@
 			range-error="error.message.11orless" 
 			type="string" />
 
-		<field 
-			formid="birthday" 
-			label="label.input.birthday.profile" 
-			mandatory="true" 
-			max-length="11"
-			missing-error="error.message.required" 
-			range-error="error.message.11orless" 
-			type="date" />
-
 		<field
 			formid="email" 
 			label="label.input.email.profile" 
