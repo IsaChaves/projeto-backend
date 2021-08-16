@@ -23,28 +23,20 @@
 			formid="cpfisabela" 
 			label="label.input.cpfisabela.profile" 
 			mandatory="true" 
-			max-length="11"
+			max-length="14"
 			missing-error="error.message.required" 
-			range-error="error.message.11orless" 
+			range-error="error.message.14orless" 
 			type="string" />
 		
-		<field 
-			formid="birthday" 
-			label="label.input.birthday.profile" 
-			mandatory="true" 
-			max-length="11"
-			missing-error="error.message.required" 
-			range-error="error.message.11orless" 
-			type="date" />
 		
 		<field 
 			formid="gender" 
-			label="label.select.gender.profile" 
+			label="label.input.gender.profile" 
 			mandatory="true" 
 			max-length="50"
 			missing-error="error.message.required" 
 			range-error="error.message.50orless" 
-			type="string" />
+			type="string" /> -->
 
 		<field 
 			formid="CEPisabela" 
@@ -56,8 +48,8 @@
 			type="string" />
 		
 		<field 
-			formid="Stateisabela" 
-			label="label.input.Stateisabela.profile" 
+			formid="StateIsabela" 
+			label="label.input.StateIsabela.profile" 
 			mandatory="true" 
 			max-length="50"
 			missing-error="error.message.required" 

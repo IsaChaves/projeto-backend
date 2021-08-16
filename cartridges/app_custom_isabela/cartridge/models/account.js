@@ -12,25 +12,21 @@ var Customer = require('dw/customer/Customer');
 function getProfile(profile) {
     var result;
 
-    var CustomerMgr = require ('dw/customer/CustomerMgr');
+    var CustomerMgr = require('dw/customer/CustomerMgr');
     var profileCustom = CustomerMgr.getCustomerByLogin(profile.email);
+    profileCustom = profileCustom.getProfile();
 
-    if (profileCustom!= null) {
-        var profileCustom = profileCustom.getProfile();
-    }
-    
     if (profile) {
         result = {
             firstName: profile.firstName,
             lastName: profile.lastName,
             cpfisabela: profileCustom.custom.cpfisabela,
-            birthday: profile.birthday,
-            gender:profile.gender,
-            email: profile.email,
+            gender: profile.gender,
             CEPisabela: profileCustom.custom.CEPisabela,
             StateIsabela: profileCustom.custom.StateIsabela,
             CityIsabela: profileCustom.custom.CityIsabela,
-            StrateIsabela: profileCustom.custom.StreetIsabela,
+            StreetIsabela: profileCustom.custom.StreetIsabela,
+            email: profile.email,
             phone: Object.prototype.hasOwnProperty.call(profile, 'phone') ? profile.phone : profile.phoneHome,
             password: '********'
         };

@@ -217,13 +217,12 @@ server.post(
             firstName: registrationForm.customer.firstname.value,
             lastName: registrationForm.customer.lastname.value,
             cpfisabela: registrationForm.customer.cpfisabela.value,
-            birthday: registrationForm.customer.birthday.value,
             gender: registrationForm.customer.gender.value,
-            phone: registrationForm.customer.phone.value,
             CEPisabela: registrationForm.customer.CEPisabela.value,
             StateIsabela: registrationForm.customer.StateIsabela.value,
             CityIsabela: registrationForm.customer.CityIsabela.value,
             StreetIsabela: registrationForm.customer.StreetIsabela.value,
+            phone: registrationForm.customer.phone.value,
             email: registrationForm.customer.email.value,
             emailConfirm: registrationForm.customer.emailconfirm.value,
             password: registrationForm.login.password.value,
@@ -272,13 +271,12 @@ server.post(
                                 newCustomerProfile.firstName = registrationForm.firstName;
                                 newCustomerProfile.lastName = registrationForm.lastName;
                                 newCustomerProfile.custom.cpfisabela = registrationForm.cpfisabela;
-                                newCustomerProfile.birthday = registrationForm.birthday;
                                 newCustomerProfile.gender = registrationForm.gender;
-                                newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.custom.CEPisabela = registrationForm.CEPisabela;
                                 newCustomerProfile.custom.StateIsabela = registrationForm.StateIsabela;
                                 newCustomerProfile.custom.CityIsabela = registrationForm.CityIsabela;
                                 newCustomerProfile.custom.StreetIsabela = registrationForm.StreetIsabela;
+                                newCustomerProfile.phoneHome = registrationForm.phone;
                                 newCustomerProfile.email = registrationForm.email;
                             }
                         });
@@ -367,12 +365,6 @@ server.get(
         profileForm.customer.lastname.value = accountModel.profile.lastName;
         profileForm.customer.phone.value = accountModel.profile.phone;
         profileForm.customer.email.value = accountModel.profile.email;
-
-        var CustomerMgr = require ('dw/cutomer/CustomerMgr');
-        var profileCustom = CustomerMgr.getCustomerByLogin(profileForm.customer.email.value);
-        var profileCustom = profileCustom.getProfile();
-
-
         res.render('account/profile', {
             profileForm: profileForm,
             breadcrumbs: [
