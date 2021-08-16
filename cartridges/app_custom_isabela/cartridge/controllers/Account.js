@@ -217,7 +217,13 @@ server.post(
             firstName: registrationForm.customer.firstname.value,
             lastName: registrationForm.customer.lastname.value,
             cpfisabela: registrationForm.customer.cpfisabela.value,
+            birthday: registrationForm.customer.birthday.value,
+            gender: registrationForm.customer.gender.value,
             phone: registrationForm.customer.phone.value,
+            CEPisabela: registrationForm.customer.CEPisabela.value,
+            StateIsabela: registrationForm.customer.StateIsabela.value,
+            CityIsabela: registrationForm.customer.CityIsabela.value,
+            StreetIsabela: registrationForm.customer.StreetIsabela.value,
             email: registrationForm.customer.email.value,
             emailConfirm: registrationForm.customer.emailconfirm.value,
             password: registrationForm.login.password.value,
@@ -266,7 +272,13 @@ server.post(
                                 newCustomerProfile.firstName = registrationForm.firstName;
                                 newCustomerProfile.lastName = registrationForm.lastName;
                                 newCustomerProfile.custom.cpfisabela = registrationForm.cpfisabela;
+                                newCustomerProfile.birthday = registrationForm.birthday;
+                                newCustomerProfile.gender = registrationForm.gender;
                                 newCustomerProfile.phoneHome = registrationForm.phone;
+                                newCustomerProfile.custom.CEPisabela = registrationForm.CEPisabela;
+                                newCustomerProfile.custom.StateIsabela = registrationForm.StateIsabela;
+                                newCustomerProfile.custom.CityIsabela = registrationForm.CityIsabela;
+                                newCustomerProfile.custom.StreetIsabela = registrationForm.StreetIsabela;
                                 newCustomerProfile.email = registrationForm.email;
                             }
                         });

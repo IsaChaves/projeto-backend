@@ -27,6 +27,61 @@
 			missing-error="error.message.required" 
 			range-error="error.message.11orless" 
 			type="string" />
+		
+		<field 
+			formid="birthday" 
+			label="label.input.birthday.profile" 
+			mandatory="true" 
+			max-length="11"
+			missing-error="error.message.required" 
+			range-error="error.message.11orless" 
+			type="date" />
+		
+		<field 
+			formid="gender" 
+			label="label.select.gender.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field 
+			formid="CEPisabela" 
+			label="label.input.CEPisabela.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+		
+		<field 
+			formid="Stateisabela" 
+			label="label.input.Stateisabela.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+		<field 
+			formid="CityIsabela" 
+			label="label.input.CityIsabela.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
+
+
+		<field 
+			formid="StreetIsabela" 
+			label="label.input.StreetIsabela.profile" 
+			mandatory="true" 
+			max-length="50"
+			missing-error="error.message.required" 
+			range-error="error.message.50orless" 
+			type="string" />
 
 		<field
 			formid="email" 

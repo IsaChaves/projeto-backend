@@ -24,7 +24,13 @@ function getProfile(profile) {
             firstName: profile.firstName,
             lastName: profile.lastName,
             cpfisabela: profileCustom.custom.cpfisabela,
+            birthday: profile.birthday,
+            gender:profile.gender,
             email: profile.email,
+            CEPisabela: profileCustom.custom.CEPisabela,
+            StateIsabela: profileCustom.custom.StateIsabela,
+            CityIsabela: profileCustom.custom.CityIsabela,
+            StrateIsabela: profileCustom.custom.StreetIsabela,
             phone: Object.prototype.hasOwnProperty.call(profile, 'phone') ? profile.phone : profile.phoneHome,
             password: '********'
         };

@@ -46,10 +46,49 @@
             id="registration-form-cpfisabela"
             data-missing-error="${Resource.msg('error.message.required','forms',null)}"
             data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
-            aria-describedby="form-fname-error"
+            aria-describedby="form-cpfisabela-error"
             <isprint value=${pdict.profileForm.customer.cpfisabela.attributes} encoding="off" />>
         <div class="invalid-feedback" id="form-cpfisabela-error"></div>
     </div>
+
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.birthday.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-birthday">
+            <isprint value="${pdict.profileForm.customer.birthday.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="date"
+            class="form-control"
+            id="registration-form-birthday"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
+            aria-describedby="form-birthday-error"
+            <isprint value=${pdict.profileForm.customer.birthday.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-birthday-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.gender.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-gender">
+            <isprint value="${pdict.profileForm.customer.gender.label}" encoding="htmlcontent"/>
+        </label>
+        <select
+            type="text"
+            class="form-control"
+            id="registration-form-gender"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.12orless','forms',null)}"
+            aria-describedby="form-gender-error"
+            placeholder="Gender"
+            <isprint value=${pdict.profileForm.customer.gender.attributes} encoding="off" />>
+            <option value=0>Undefine</option>
+            <option value=1>Male</option>
+            <option value=2>Female</option>
+            <option value=3>Other</option>
+        </select>
+        <div class="invalid-feedback" id="form-gender-error"></div>
+    </div>
+
     <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.phone.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-phone">
@@ -69,9 +108,72 @@
     </div>
 
     <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.CEPisabela.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-CEPisabela">
+            <isprint value="${pdict.profileForm.customer.CEPisabela.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="form-control"
+            id="registration-form-CEPisabela"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
+            aria-describedby="form-CEPisabela-error"
+            <isprint value=${pdict.profileForm.customer.CEPisabela.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-CEPisabela-error"></div>
+    </div>
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.Stateisabela.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-Stateisabela">
+            <isprint value="${pdict.profileForm.customer.Stateisabela.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="form-control"
+            id="registration-form-Stateisabela"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
+            aria-describedby="form-Stateisabela-error"
+            <isprint value=${pdict.profileForm.customer.Stateisabela.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-Stateisabela-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.CityIsabela.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-CityIsabela">
+            <isprint value="${pdict.profileForm.customer.CityIsabela.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="form-control"
+            id="registration-form-CityIsabela"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
+            aria-describedby="form-CityIsabela-error"
+            <isprint value=${pdict.profileForm.customer.CityIsabela.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-CityIsabela-error"></div>
+    </div>
+
+    <div class="form-group
+        <isif condition="${!!pdict.profileForm.customer.StreetIsabela.mandatory === true}">required</isif>">
+        <label class="form-control-label" for="registration-form-StreetIsabela">
+            <isprint value="${pdict.profileForm.customer.StreetIsabela.label}" encoding="htmlcontent" />
+        </label>
+        <input
+            type="text"
+            class="form-control"
+            id="registration-form-StreetIsabela"
+            data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+            data-range-error="${Resource.msg('error.message.11orless','forms',null)}"
+            aria-describedby="form-Stateisabela-error"
+            <isprint value=${pdict.profileForm.customer.StreetIsabela.attributes} encoding="off" />>
+        <div class="invalid-feedback" id="form-StreetIsabela-error"></div>
+    </div>
+
+    <div class="form-group
         <isif condition="${!!pdict.profileForm.customer.email.mandatory === true}">required</isif>">
         <label class="form-control-label" for="registration-form-email">
-             <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
+            <isprint value="${pdict.profileForm.customer.email.label}" encoding="htmlcontent" />
         </label>
         <input
             type="text"
@@ -158,4 +260,35 @@
             ${Resource.msg('link.privacypolicy.registration', 'registration', null)}
         </a>
     </div>
+
+    <script>
+    'use strict';
+
+    const preencherFormulario = (endereco) => {
+        document.getElementById('registration-form-Stateisabela').value = endereco.uf;
+        document.getElementById('registration-form-CityIsabela').value = endereco.localidade;
+        document.getElementById('registration-form-StreetIsabela').value = endereco.logradouro;
+    }
+
+    const cepValido = (cep) => cep.length == 8 && /^[0-9]+$/.test(cep);
+
+    const pesquisarCep = async () => {
+        const cep = document.getElementById('registration-form-CEPisabela').value;
+        const url = "https://viacep.com.br/ws/"+cep+"/json/";
+        if(cepValido(cep)){
+
+            const dados = await fetch(url);
+            const endereco = await dados.json();
+            if(endereco.hasOwnProperty('erro')){
+                document.getElementById('registration-form-CEPisabela').value = 'CEP não encontrado!';
+            }else{
+                preencherFormulario(endereco);
+            }
+        }else{
+            document.getElementById('registration-form-CEPisabela').value = 'CEP Incorreto!';
+        }
+    }
+
+    document.getElementById('registration-form-CEPisabela').addEventListener('focusout', pesquisarCep);
+</script>
 </form>
